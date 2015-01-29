@@ -1,0 +1,82 @@
+git clone https://github.com/acekypee/narvaez_githubpractice.git
+mkdir chpr1
+nano README.txt
+git status
+git add README.txt
+git status
+git commit -m "chapter 1"
+git status 
+git push -u origin master
+enter username
+enter password
+
+cd ..
+
+mkdir chpr2
+nano README.txt
+git status
+git add README.txt
+git status
+git commit -m "chapter 2"
+git status 
+git push -u origin master
+enter username
+enter password
+
+cd ..
+
+mkdir chpr3
+nano README.txt
+git status
+git add README.txt
+git status
+git commit -m "chapter 3"
+git status 
+git push -u origin master
+enter username
+enter password
+
+cd ..
+
+mkdir chpr4
+nano README.txt
+git status
+git add README.txt
+git status
+git commit -m "chapter 4"
+git status 
+git push -u origin master
+enter username
+enter password
+
+cd ..
+
+mkdir chpr5
+nano README.txt
+git status
+git add README.txt
+git status
+git commit -m "chapter 5"
+git status 
+git push -u origin master
+enter username
+enter password
+
+cd ..
+
+mkdir chpr6
+nano README.txt
+git status
+git add README.txt
+git status
+git commit -m "chapter 6"
+git status 
+git push -u origin master
+enter username
+enter password
+
+
+
+
+
+

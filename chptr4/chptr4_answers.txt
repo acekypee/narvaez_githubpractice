@@ -1,1 +1,142 @@
-lalalala
+git clone /opt/git/project.git
+
+git clone file:///opt/git/project.git
+
+git remote add local_proj /opt/git/project.git
+
+cd /war/www/htdocs
+git clone --bare /path/to/git_project gitproject.git
+cd gitproject.git
+mv hooks/post-update.sample hooks/post_update
+chmod a+x hooks/post-update
+
+git clone https://example.com/gitproject.git
+
+git clone ssh://user@server/project.git
+or
+git clone user@server:project.git
+
+git clone --bare my_project my_project.git
+
+cp -Rf my_project//.git my_project.git
+
+scp -r my_project.git user@git.example.com:/opt/git
+
+git clone user@git.example.com:/opt/git/my_project.git
+
+ssh user@git.example.com
+cd /opt/git/myproject.git
+git init --bare --shared
+
+cd ~/.ssh
+ls
+ssh-keygen
+
+cat ~/.ssh/id_rsa.pub
+
+sudo adduser git
+su git
+cd 
+mkdir .ssh && chmod 700 .ssh
+touch /ssh/authorized_keys && chmod 600 .ssh/authorized_keys
+
+cat /tmp/id_rsa.john.pub >> ~/.ssh/authorized_keys
+cat /tmp/id_rsa.josie.pub >> ~/.ssh/authorized_keys
+cat /tmp/id_rsa.jessica.pub >> ~/.ssh/authorized_keys
+
+cd /opt/git
+mkdir project.git
+cd project.git
+git init --bare
+
+on KPs computer
+cd myproject
+git init
+git add .
+git commit -m "initial commit"
+git remote add origin git@gitserver:/opt/git/project.git
+git push origin master
+
+git clone git@gitserver:/opt/git/project.git
+cd project
+vim README
+git commit -am "fix README"
+git push origin master
+
+cat /etc/shells
+which git-shell
+sudo vim /etc/shells
+
+sudo chsh git
+
+ssh git@gitserver
+
+git daemon --reuseaddr --base-path=/opt/git/ /opt/git/
+
+/etc/event.d/local-git-daemon
+
+<script>
+start on startup
+stop on shutdown
+exec /usr/bin/git daemon \
+    --user=git --group=git \
+    --reuseaddr \
+    --base-path=/opt/git/ \
+    /opt/git/
+respawn
+</script>
+
+initctl start local-git-daemon
+
+cd /path/to/project.git
+touch git-daemon-export-ok
+
+sudo apt-get install apache2 apache2-utils
+a2enmod cgi alias env
+
+SetEnv GIT_PROJECT_ROOT /opt/git
+SetEnv GIT_HTTP_EXPORT_ALL
+ScriptAlias /git/ /usr/libexec/git-core/git-http-backend/
+
+<Directory "/usr/lib/git-core*">
+   Options ExecCGI Indexes
+   Order allow,deny
+   Allow from all
+   Require all granted
+</Directory>
+
+<Directory "/usr/lib/git-core*">
+   Options ExecCGI Indexes
+   Order allow,deny
+   Allow from all
+   Require all granted
+</Directory>
+
+htdigest -c /opt/git/.htpasswd "Git Access" schacon
+
+git instaweb --httpd=webrick
+
+git instaweb --httpd=webrick --stop
+
+git clone git://git.kernel.org/pub/scm/git/git.git
+cd git/
+make GITWEB_PROJECTROOT="/opt/git" prefix=/usr gitweb
+sudo cp -Rf gitweb /var/www/
+
+<VirtualHost *:80>
+    ServerName gitserver
+    DocumentRoot /var/www/gitweb
+    <Directory /var/www/gitweb>
+        Options ExecCGI +FollowSymLinks +SymLinksIfOwnerMatch
+        AllowOverride All
+        order allow,deny
+        Allow from all
+        AddHandler cgi-script cgi
+        DirectoryIndex gitweb.cgi
+    </Directory>
+</VirtualHost>
+
+git remote add gitlab https://server/namespace/project.git
+
+git clone https://server/namespace/project.git
+

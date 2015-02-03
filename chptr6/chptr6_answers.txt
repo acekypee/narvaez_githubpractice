@@ -1,1 +1,16 @@
-lalalalala
+How to make a Github account
+SSH access
+
+forking a project
+-contributing to a project
+
+
+pull request
+
+How to create new repository
+-refer to chapter 1_answers.txt
+
+how to make an organization
+
+scripting in Github
+-hooks

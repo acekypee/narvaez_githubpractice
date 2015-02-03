@@ -1,1 +1,86 @@
-lalalalala
+git diff --check
+
+git clone john@githost:simplegit.git
+
+cd simplegit/
+vaim lib/simplegit.rb
+
+git commit -am "removed invalid default value"
+
+git clone jessica@githost:simplegit.git
+
+cd simplegit/
+vim TODO
+git commit -am "add reset mark"
+
+git push origin master
+
+git push origin master
+
+git fetch origin
+
+git log --no-merges issue54..origin/master
+
+git checkout master
+
+git merge issue54
+
+git merge origin/master
+
+git branch sc/ruby_client master
+
+git checkout -b sc/ruby_client master
+
+git apply /tmp/patch-ruby/client.path
+
+git apply --check 0001-seeing-if-this-helps-the-gem.patch
+
+git am 0001-limit-log-function.patch
+
+git am 0001-seeing-if-this-helps-the-gem.patch
+
+(fix the file)
+git add ticgit.gemspec
+git am --resolved
+
+git am -3 0001-seeing-if-this-helps-the-gem.patch
+
+git am -3 -i mbox
+
+git remote add jessica git://github.com/jessica/myproject.git
+git fetch jessica
+git checkout -b rubyclient jessica/ruby-client
+
+git pull https://github.com/onetimeguy/project
+
+git log contrib --not master
+
+git diff master
+
+git merge-base contrib master
+git diff 36c7db
+
+git diff master...contrib
+
+git cherry-pick e43a6fd3e94888d76779ad79fb568ed180e5fcdf
+
+git config --global rerere.enabled true
+
+git tag -s v1.5 -m "1.5"
+
+gpg --list-keys
+
+gpg -a --export F721C45A | git hash-object -w --stdin
+
+git tag -a maintainer-pgp-pub 659ef797d181633c87ec71ac3f9ba29fe5775b92
+
+git show maintainer-pgp-pub | gpg --import
+
+git describe master
+
+git archive master --prefix='project/' | gzip > `git describe master`.tar.gz
+ls *.tar.gz
+
+git archive master --prefix='project/' --format=zip > `git describe master ' .zip
+
+git shortlog --no-merges master --not v1.0.1
